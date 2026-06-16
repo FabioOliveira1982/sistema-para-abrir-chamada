@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSupport Help Desk Pro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>TechSupport Help Desk Pro</h2>
+</div>
+
+<div id="login">
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Login</h2>
+
+            <input type="text" id="usuario" placeholder="Usuário">
+
+            <input type="password" id="senha" placeholder="Senha">
+
+            <button class="btn-primary" onclick="login()">
+                Entrar
+            </button>
+
+            <p class="credenciais">
+                Usuário: admin<br>
+                Senha: 1234
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="sistema">
+
+<header>
+    <h1>TechSupport Help Desk Pro</h1>
+    <p>Gerenciamento de Chamados Técnicos</p>
+</header>
+
+<div class="container">
+
+    <button class="btn-dark" onclick="alternarTema()">
+        🌙 Dark Mode
+    </button>
+
+    <div class="card">
+
+        <h2>Abrir Chamado</h2>
+
+        <input
+        type="text"
+        id="titulo"
+        placeholder="Título do chamado">
+
+        <textarea
+        id="descricao"
+        rows="4"
+        placeholder="Descrição do problema"></textarea>
+
+        <select id="prioridade">
+            <option>Baixa</option>
+            <option>Média</option>
+            <option>Alta</option>
+        </select>
+
+        <button
+        class="btn-primary"
+        onclick="criarChamado()">
+            Abrir Chamado
+        </button>
+
+    </div>
+
+    <div class="dashboard">
+
+        <div class="card indicador">
+            <h3>Total</h3>
+            <h2 id="total">0</h2>
+        </div>
+
+        <div class="card indicador">
+            <h3>Alta Prioridade</h3>
+            <h2 id="alta">0</h2>
+        </div>
+
+        <div class="card indicador">
+            <h3>Resolvidos</h3>
+            <h2 id="resolvidos">0</h2>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Pesquisar</h2>
+
+        <input
+        type="text"
+        id="pesquisa"
+        placeholder="Pesquisar chamado..."
+        onkeyup="pesquisarChamado()">
+
+    </div>
+
+    <div class="card">
+
+        <h2>Lista de Chamados</h2>
+
+        <button
+        class="btn-success"
+        onclick="gerarPDF()">
+            Exportar PDF
+        </button>
+
+        <div id="listaChamados"></div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
